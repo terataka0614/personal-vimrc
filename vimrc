@@ -1,4 +1,13 @@
 " ==================================================
+" dein.vim取得
+" ==================================================
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_repos = s:dein_dir . '/dein.vim'
+if !isdirectory(s:dein_repos)
+	execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repos
+endif
+
+" ==================================================
 "  dein.vim初期設定
 " ==================================================
 set nocompatible                      " vi設定の無効化
@@ -39,7 +48,7 @@ set t_Co=256
 " php syntax error
 " ==================================================
 autocmd FileType php set makeprg=php\ -l\ %
-autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
+autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif | redraw!
 
 " ==================================================
 " vim基本設定
