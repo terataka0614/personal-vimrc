@@ -2,6 +2,10 @@
 " dein.vim取得
 " ==================================================
 let s:dein_dir = expand('~/.vim/dein')
+if !isdirectory(s:dein_dir)
+	echo s:dein_dir . " が作成されていないため、処理を中断します。作成後に再度vimを立ち上げてください。"
+	finish
+endif
 let s:dein_repos = s:dein_dir . '/dein.vim'
 if !isdirectory(s:dein_repos)
 	execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repos
