@@ -57,10 +57,16 @@ autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else
 " ==================================================
 " vim基本設定
 " ==================================================
-set number                              " 行番号表示
-set tabstop=4                           " タブの半角スペース数
-set backspace=indent,eol,start          " バックスペースの有効化
-set showcmd                             " 入力中コマンドの表示
-set fenc=utf-8                          " 文字コードの指定 [UTF-8]
-set fileformats=unix                    " 改行コードの指定 [LF]
-
+set backspace=start,eol,indent    " バックスペースキーの動作設定
+set fileencoding=utf-8            " 文字エンコード
+set fileformat=unix               " 改行エンコード
+set tabstop=4                     " タブの空白数
+set shiftwidth=4                  " 自動インデントの段階ごとの空白数
+set noexpandtab                   " タブ入力自に空白を無効
+set number                        " 行数を表示
+set nosmartindent                 " 高度な自動インデントの無効化
+set autoindent                    " 自動インデントの有効化
+set showmatch                     " 対応する括弧のハイライト表示
+set list                          " 不可視文字の表示
+set listchars=tab:\¦\_,trail:~    " 不可視文字の表示設定
+set showcmd                       " コマンドの可視化
